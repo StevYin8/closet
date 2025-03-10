@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
         NavigationView {
@@ -45,13 +46,13 @@ struct ContentView: View {
                 
                 // Divider
                 Divider()
-                    .background(Color(UIColor.systemGray4))
+                    .background(Color.secondary.opacity(0.2))
                     .padding(.vertical, 20)
                 
                 // Description Text
                 Text("记录你的衣物，智能推荐穿搭，探索你的时尚风格。")
                     .font(.system(size: 14))
-                    .foregroundColor(Color(UIColor.darkGray))
+                    .foregroundColor(Color.gray.opacity(0.8))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
                 
@@ -97,7 +98,7 @@ struct ContentView: View {
                 // Disclaimer Text
                 Text("点击登录并开始体验，即代表您已阅读并同意 衣橱记用户协议 & 衣橱记隐私协议。")
                     .font(.system(size: 12))
-                    .foregroundColor(Color(UIColor.lightGray))
+                    .foregroundColor(Color.gray.opacity(0.3))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
                     .padding(.top, 16)
@@ -108,14 +109,14 @@ struct ContentView: View {
                         HStack {
                             Spacer()
                             Text("衣橱记用户协议")
-                                .foregroundColor(Color(UIColor.systemBlue))
+                                .foregroundColor(Color.blue)
                                 .onTapGesture {
                                     // Action for user agreement
                                 }
                             Text(" & ")
-                                .foregroundColor(Color(UIColor.lightGray))
+                                .foregroundColor(Color.gray.opacity(0.3))
                             Text("衣橱记隐私协议")
-                                .foregroundColor(Color(UIColor.systemBlue))
+                                .foregroundColor(Color.blue)
                                 .onTapGesture {
                                     // Action for privacy agreement
                                 }
@@ -123,15 +124,15 @@ struct ContentView: View {
                         }
                     )
             }
-            .background(Color(UIColor.systemGray6))
-            .navigationBarHidden(true)
+            .background(Color.gray.opacity(0.1))
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+// struct ContentView_Previews: PreviewProvider {
+//     static var previews: some View {
+//         ContentView()
+//     }
+// }
 
