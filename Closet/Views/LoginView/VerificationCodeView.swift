@@ -1,6 +1,15 @@
+//
+//  PhoneVrifyCode.swift
+//  Closet
+//
+//  Created by 尹少军 on 2025/3/10.
+//
+
+
 import SwiftUI
 
-struct VerificationCodeView: View {
+struct VerificationCodeView: View{
+    let phoneNumber: String
     @State private var verificationCode: String = ""
     @Environment(\.dismiss) private var dismiss
 
@@ -12,7 +21,7 @@ struct VerificationCodeView: View {
                     Text("请输入4位验证码")
                         .font(.system(size: 16))
                         .foregroundColor(.black)
-                    Text("发送至 +86 **** 1234")
+                    Text("发送至 +86 **** " + phoneNumber.suffix(4))
                         .font(.system(size: 14))
                         .foregroundColor(.gray)
                 }
@@ -72,12 +81,7 @@ struct VerificationCodeView: View {
 
 struct VerificationCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationCodeView()
+        VerificationCodeView(phoneNumber: "13800138000")
     }
-}//
-//  PhoneVrifyCode.swift
-//  Closet
-//
-//  Created by 尹少军 on 2025/3/10.
-//
+}
 

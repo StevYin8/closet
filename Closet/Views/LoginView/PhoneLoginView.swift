@@ -1,7 +1,9 @@
 import SwiftUI
 
+
 struct PhoneLoginView: View {
     @State private var phoneNumber: String = ""
+    @State private var isNavigating = false // 控制跳转状态
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -32,7 +34,7 @@ struct PhoneLoginView: View {
                 
                 Spacer()
                 
-                // 下一步按钮
+                // "下一步" 按钮 + 隐藏的导航链接
                 HStack {
                     Spacer()
                     Button(action: handleNext) {
@@ -45,6 +47,14 @@ struct PhoneLoginView: View {
                     }
                     .padding(.trailing, 20)
                     .padding(.bottom, 20)
+                }
+                
+                // 隐藏的 NavigationLink 控制跳转
+                NavigationLink(
+                    destination: VerificationCodeView(phoneNumber: phoneNumber),
+                    isActive: $isNavigating
+                ) {
+                    EmptyView()
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -64,9 +74,16 @@ struct PhoneLoginView: View {
     }
     
     private func handleNext() {
-        // 处理下一步逻辑
-        print("Phone number:", phoneNumber)
+        guard !phoneNumber.isEmpty else {
+            print("请输入手机号")
+            return
+        }
+        
+        sendVerificationCode(phoneNumber: phoneNumber) // 发送验证码
+        isNavigating = true // 触发跳转
     }
+    
+    
 }
 
 // 预览
@@ -74,4 +91,4 @@ struct PhoneLoginView_Previews: PreviewProvider {
     static var previews: some View {
         PhoneLoginView()
     }
-} 
+}

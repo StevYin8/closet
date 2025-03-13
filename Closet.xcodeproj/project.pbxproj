@@ -37,6 +37,20 @@
 			);
 			target = EA11CEF42D7EA088005409B5 /* Closet */;
 		};
+		EAAB373B2D89BE09002B1561 /* Exceptions for "Closet" folder in "ClosetTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+			);
+			target = EA11CF0A2D7EA08A005409B5 /* ClosetTests */;
+		};
+		EAAB373C2D89BE09002B1561 /* Exceptions for "Closet" folder in "ClosetUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+			);
+			target = EA11CF142D7EA08A005409B5 /* ClosetUITests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +58,8 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				EA11CF1D2D7EA08A005409B5 /* Exceptions for "Closet" folder in "Closet" target */,
+				EAAB373B2D89BE09002B1561 /* Exceptions for "Closet" folder in "ClosetTests" target */,
+				EAAB373C2D89BE09002B1561 /* Exceptions for "Closet" folder in "ClosetUITests" target */,
 			);
 			path = Closet;
 			sourceTree = "<group>";
